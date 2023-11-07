@@ -44,6 +44,8 @@ public class Controller : MonoBehaviour
     public float lookSpeed = 2.0f;
     public float lookXLimit = 60.0f;
 
+    private Animator moveAnimation;
+
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
     Vector2 rotation = Vector2.zero;
@@ -56,7 +58,7 @@ public class Controller : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         rotation.y = transform.eulerAngles.y;
 
-
+        moveAnimation = GetComponent<Animator>();
     }
 
     void Update()
@@ -69,6 +71,15 @@ public class Controller : MonoBehaviour
             float curSpeedX = speed * Input.GetAxis("Vertical");
             float curSpeedY = speed * Input.GetAxis("Horizontal");
             moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+
+            //detta funkar bara för BlendTree
+            //  float blendTreeValue = Input.GetAxis("Vertical");
+            //  moveAnimation.SetFloat("Movement", blendTreeValue);
+
+            float blendX = Input.GetAxis("Horizontal");
+            float blendY = Input.GetAxis("Vertical");
+            moveAnimation.SetFloat("MovementX", blendX);
+            moveAnimation.SetFloat("MovementY", blendY);
 
             if (Input.GetButton("Jump"))
             {

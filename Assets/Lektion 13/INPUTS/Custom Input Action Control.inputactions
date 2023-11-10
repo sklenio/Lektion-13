@@ -1,0 +1,34 @@
+{
+    "name": "Custom Input Action Control",
+    "maps": [
+        {
+            "name": "GamePlay",
+            "id": "b0daa882-23a1-49a8-a305-6c889b4ba31a",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "113dda6f-2407-4389-a5f1-edebb6db5768",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "15332eaa-c02b-41f1-a92a-92eaeac0a6ed",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
